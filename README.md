@@ -62,7 +62,7 @@ Com o arquivo.csv pronto, basta inserir no seu projeto do BigQuery e para isso v
 
 ## Criação de Tabela
 
-![Criação de Tabela no BigQuery](C:\Users\daisy\OneDrive\Documentos\GitHub\crawler_project\img\criando_tabela.png)
+![Criação de Tabela no BigQuery](img\criando_tabela.png)
 
 Para criar essa tabela, é necessário criar o esquema desta forma
-![Criação de Tabela no BigQuery](C:\Users\daisy\OneDrive\Documentos\GitHub\crawler_project\img\esquema_tabela.png)
+![Criação de Tabela no BigQuery](img\esquema_tabela.png)
