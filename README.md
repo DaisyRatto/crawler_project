@@ -67,14 +67,14 @@ No momento de criação da tabela é importante, no 'Esquema', atribuir os nomes
 ## Buscar todas as notícias por ordem dos primeiros artigos encontrados
 ~~~bash 
 SELECT *
- FROM `lima-news-crawler-project.news_data.news_data`
+ FROM `nome-do-projeto.nome_do_conjunto_de_dados.nome_da_tabela`
  ORDER BY article_release_date;
 ~~~
 
 ## Retornar valor pela 'palavra-chave' na coluna escolhida
 ~~~bash 
 SELECT *
- FROM `lima-news-crawler-project.news_data.news_data`
+ FROM `nome-do-projeto.nome_do_conjunto_de_dados.nome_da_tabela`
  WHERE topic 
  LIKE ('%culture%');
 ~~~
