@@ -6,7 +6,7 @@ class NewsSpiderSpider(scrapy.Spider):
     start_urls = ["https://theguardian.com/au"]
 
     def parse(self, response):
-        # Variável 'news' está relacionada aos artigos do site dcr-16c50tn
+        # Variável 'news' está relacionada aos artigos do site dcr-4z6ajs
         news = response.css('div.dcr-4z6ajs')
 
         for n in news:
@@ -27,7 +27,7 @@ class NewsSpiderSpider(scrapy.Spider):
             yield response.follow(next_page_url, callback= self.parse)
 
     def parse_news_page(self, response):
-
+    # Seleção dos dados que serão coletados
         yield {
             'url': response.url,
             'title':  response.css('.dcr-cohhs3 h1::text').get(),

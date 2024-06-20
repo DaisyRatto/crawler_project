@@ -10,12 +10,12 @@ Este projeto consiste em um crawler que coleta notícias do site theguardian.com
 - [Uso](#uso)
 
 ## Introdução
-Este projeto é um crawler que coleta artigos de notícias do site theguardian.com. Foi utilizado o framework Scrapy para ajudar no desenvolvimento deste projeto e as notícias coletadas foram armazenadas no BigQuery para análise e consulta. O intuito  <!-- Uma API RESTful é fornecida para facilitar a busca e recuperação desses dados.  -->
+Este projeto é um crawler que coleta artigos de notícias do site theguardian.com. Foi utilizado o framework Scrapy para ajudar no desenvolvimento deste projeto e as notícias coletadas foram armazenadas no BigQuery para análise e consulta. <!-- Uma API RESTful é fornecida para facilitar a busca e recuperação desses dados.  -->
 
 ## Funcionalidades
 
 - Coleta as notícias do site theguardian.com/au (código desta funcionalidade está em news_scraper/news_scraper/spiders/news_spider.py);
-- Os dados coletados são: URLs, títulos e subtítulos dos artigos, data de lançamento do artigo, nome do autor e a categoria daquela notícia;
+- Os dados coletados são: URLs, títulos e subtítulos dos artigos, data de lançamento do artigo, nome do autor e a categoria da notícia;
 - As coletas feitas estão na pasta news_scraper em formato CSV e em JSON;
 - A coleta dos dados foram armazenados no Google BigQuery no formato CSV.
 
@@ -30,7 +30,7 @@ Este projeto é um crawler que coleta artigos de notícias do site theguardian.c
 ### Clone o Repositório
 ~~~bash
 git clone https://github.com/seu-usuario/crawler_project.git
-cd the-guardian-news-crawler
+cd crawler_project
 ~~~
 
 ### Crie um Ambiente Virtual
@@ -41,16 +41,17 @@ venv\Scripts\activate # No Mac, use 'source venv/bin/activate'
 
 ### Instale as Dependências
 ~~~bash
+cd news_scraper
 pip install -r requirements.txt
 ~~~
 
 ## Uso
 
-Para visualizar esses dados, vamos inserir nosso arquivo news_scraper.csv em nosso projeto do BigQuery. 
+Para visualizar esses dados, é necessário inserir o arquivo news_data.csv no projeto do BigQuery.
 
-Caso queira extrair esses dados novamente, entre na pasta
+Para extrair esses dados novamente, acesse a pasta
 ~~~bash 
-cd news_scraper/news_scraper
+cd news_scraper
 ~~~
 Execute o crawler para criar um novo arquivo.csv e escolha um nome diferente do arquivo existente
 ~~~bash 
@@ -62,7 +63,6 @@ Com o arquivo.csv pronto, basta inserir no seu projeto do BigQuery e para isso v
 No momento de criação da tabela é importante, no 'Esquema', atribuir os nomes dos campos para cada tipo de dado. 
 
 # Exemplo de Consultas/Querys
-Consultas para fazer no BigQuery
 
 ## Buscar todas as notícias por ordem dos primeiros artigos encontrados
 ~~~bash 
