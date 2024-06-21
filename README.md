@@ -8,6 +8,7 @@ Este projeto consiste em um crawler que coleta notícias do site theguardian.com
 - [Requisitos](#requisitos)
 - [Instalação](#instalação)
 - [Uso](#uso)
+- [Exemplo de Consultas/Querys Simples](#exemplo-de-consultasquerys-simples)
 
 ## Introdução
 Este projeto é um crawler que coleta artigos de notícias do site theguardian.com. Foi utilizado o framework Scrapy para ajudar no desenvolvimento deste projeto e as notícias coletadas foram armazenadas no BigQuery para análise e consulta. <!-- Uma API RESTful é fornecida para facilitar a busca e recuperação desses dados.  -->
@@ -17,7 +18,7 @@ Este projeto é um crawler que coleta artigos de notícias do site theguardian.c
 - Coleta as notícias do site theguardian.com/au (código desta funcionalidade está em news_scraper/news_scraper/spiders/news_spider.py);
 - Os dados coletados são: URLs, títulos e subtítulos dos artigos, data de lançamento do artigo, nome do autor e a categoria da notícia;
 - As coletas feitas estão na pasta news_scraper em formato CSV e em JSON;
-- A coleta dos dados foram armazenados no Google BigQuery no formato CSV.
+- A coleta dos dados foi armazenada no Google BigQuery no formato CSV.
 
 ## Requisitos
 
@@ -58,11 +59,11 @@ Execute o crawler para criar um novo arquivo.csv e escolha um nome diferente do 
 scrapy crawl news_spider -o nome_do_novo_arquivo.csv
 ~~~
 
-Com o arquivo.csv pronto, basta inserir no seu projeto do BigQuery e para isso você deve criar o seu conjunto de dados dentro do seu projeto e dentro deste conjunto de dados criar uma tabela.
+Com o arquivo.csv pronto, basta inserir no seu projeto do BigQuery e, para isso, crie o seu conjunto de dados dentro do seu projeto e dentro deste conjunto de dados crie uma tabela.
 
-No momento de criação da tabela é importante, no 'Esquema', atribuir os nomes dos campos para cada tipo de dado. 
+No momento de criação da tabela, é importante, no 'Esquema', atribuir os nomes dos campos para cada tipo de dado. 
 
-# Exemplo de Consultas/Querys
+# Exemplo de Consultas/Querys Simples
 
 ## Buscar todas as notícias por ordem dos primeiros artigos encontrados
 ~~~bash 
