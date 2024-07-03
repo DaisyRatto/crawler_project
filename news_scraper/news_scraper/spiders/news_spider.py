@@ -1,14 +1,17 @@
 import scrapy
+import random
 
 class NewsSpiderSpider(scrapy.Spider):
     name = "news_spider"
-    allowed_domains = ["theguardian.com"]
+    allowed_domains = ["theguardian.com"]  # Esta variável serve para não buscarmos conteúdo em outras Websites
     start_urls = ["https://theguardian.com/au"]
+
 
     def parse(self, response):
         # Variável 'news' está relacionada aos artigos do site dcr-4z6ajs
-        news = response.css('div.dcr-4z6ajs')
+        news = response.css('div.dcr-yyvovz')
 
+        
         for n in news:
             relative_url = n.css('div.dcr-4z6ajs a ::attr(href)').get()
         # Neste loop, vamos analisar cada artigo e puxar as informações de cada um
@@ -16,7 +19,7 @@ class NewsSpiderSpider(scrapy.Spider):
                 news_url = 'https://www.theguardian.com/' + relative_url
                 yield response.follow(news_url, callback= self.parse_news_page)
                
-
+    
     # A partir daqui será para pular para a próxima página e verificar novamente
     # todo o loop da condição anterior
 

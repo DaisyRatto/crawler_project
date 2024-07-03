@@ -24,6 +24,7 @@ Este projeto é um crawler que coleta artigos de notícias do site theguardian.c
 
 - Python 3.7 ou superior;
 - Scrapy 2.11.2;
+- google-cloud-bigquery 3.24.0;
 - Conta no Google Cloud com acesso ao BigQuery;
 - Criar um projeto no BigQuery.
 
@@ -48,20 +49,23 @@ pip install -r requirements.txt
 
 ## Uso
 
-Para visualizar esses dados, é necessário inserir o arquivo news_data.csv no projeto do BigQuery.
+Para visualização dos dados, é necessário criar um dataset dentro do seu projeto do GCP e executar o script 'upload_data.py'.
+
+~~~bash 
+<your-env> ..\crawler_project> py -m upload_data
+~~~
+Essa execução criará uma nova tabela para trabalhar com os dados no BigQuery
+
 
 Para extrair esses dados novamente, acesse a pasta
 ~~~bash 
 cd news_scraper
 ~~~
-Execute o crawler para criar um novo arquivo.csv e escolha um nome diferente do arquivo existente
+Execute o crawler para criar um arquivo CSV ou JSON
 ~~~bash 
-scrapy crawl news_spider -o nome_do_novo_arquivo.csv
+scrapy crawl news_spider -o nome_do_arquivo.json 
 ~~~
 
-Com o arquivo.csv pronto, basta inserir no seu projeto do BigQuery e, para isso, crie o seu conjunto de dados dentro do seu projeto e dentro deste conjunto de dados crie uma tabela.
-
-No momento de criação da tabela, é importante, no 'Esquema', atribuir os nomes dos campos para cada tipo de dado. 
 
 # Exemplo de Consultas/Querys Simples
 
