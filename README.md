@@ -52,7 +52,7 @@ pip install -r requirements.txt
 Para visualização dos dados, é necessário criar um dataset dentro do seu projeto do GCP, criar um bucket no Google Cloud Storage com o nome "theguardian_news" e inserir o arquivo theguardian_data.json para realizar a execução do script upload_data.py
 
 ~~~bash 
-<your-env> ..\crawler_project> py -m upload_data
+(your-env) ..\crawler_project> py -m upload_data
 ~~~
 Essa execução criará uma nova tabela para trabalhar com os dados no BigQuery
 
