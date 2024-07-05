@@ -51,7 +51,7 @@ pip install -r requirements.txt
 
 Para visualização dos dados, é necessário criar um dataset dentro do seu projeto do GCP, criar um bucket no Google Cloud Storage e inserir o arquivo theguardian_data.json para realizar a execução do script upload_data.py
 
-Obs.: Antes da execução do script, será necessário inserir o uri do seu arquivo do bucket
+Obs.: Antes da execução do script, será necessário inserir o uri do seu arquivo do bucket em upload_data.py
 
 ~~~bash 
 (your-env) ..\crawler_project> py -m upload_data
